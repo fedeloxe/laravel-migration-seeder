@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainController as TrainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TrainController::class, 'getTrains'])->name('home');
+
+function convertBoolean($bool)
+{
+    if ($bool == 1) {
+        return 'Si';
+    } else {
+        return 'No';
+    }
+}

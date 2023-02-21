@@ -23,12 +23,12 @@ class TrainSeeder extends Seeder
             $newTrain->azienda = $faker->word();
             $newTrain->stazione_di_partenza = $faker->word();
             $newTrain->Stazione_di_arrivo = $faker->word();
-            $newTrain->orario_di_partenza = $faker->word();
-            $newTrain->Orario_di_arrivo = $faker->word();
+            $newTrain->orario_di_partenza = $faker->time();
+            $newTrain->Orario_di_arrivo = $faker->time();
             $newTrain->Codice_Treno = $faker->word();
             $newTrain->Numero_Carrozze = $faker->numberBetween(1, 50);
-            $newTrain->In_orariod = $faker->randomElement([true, false]);
-            $newTrain->Cancellato = $faker->randomNumber([true, false]);
+            $newTrain->In_orario = $faker->randomElement([true, false]);
+            $newTrain->Cancellato = $faker->randomElement([true, false]);
             $newTrain->save();
         }
     }
